@@ -2,6 +2,42 @@
   background-color: #f0f0f0;
 }
 
+.myPrompt {
+  background-color: #f0f0f0;
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  top: calc(50vh - 10rem);
+  left: calc(50vw - 10rem);
+  width: 20rem;
+  height: 20rem;
+  border: black 10px solid;
+  border-radius: 10%;
+
+  .newDescription {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+
+  }
+
+  .confirm {
+    position: absolute;
+    bottom: 1rem;
+    right: 8rem;
+    width: 4rem;
+    height: 2rem;
+  }
+
+  .cancel {
+    position: absolute;
+    bottom: 1rem;
+    right: 3rem;
+    width: 4rem;
+    height: 2rem;
+  }
+}
+
 .taskList {
   margin-top: 1rem;
 }

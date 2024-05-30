@@ -22,6 +22,5 @@ AddTask = () => {
     alert('任务已成功存入！');
   }
 
-  console.log(taskDescription.value)
 }
 

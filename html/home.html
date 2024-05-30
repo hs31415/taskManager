@@ -8,6 +8,16 @@
 </head>
 
 <body>
+  <div id="myPrompt" class="myPrompt">
+    <span class="newDescription">
+      请输入任务描述:
+      <input id="newDescription">
+    </span>
+
+    <button class="confirm" onclick=setDescription(newDescription.value)>确认</button>
+    <button class="cancel" onclick="myPrompt.style.display='none'">取消</button>
+  </div>
+
 </body>
 
 </html>

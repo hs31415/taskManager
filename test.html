@@ -3,19 +3,16 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>测试页</title>
+  <title>Custom Prompt Example</title>
+  <link rel="stylesheet" href="test.css">
 </head>
 
 <body>
-  <div id="app">123</div>
 
-  <script src="./test.js"></script>
-  <script>
-    const myButton = new Button('#app', 'Click Me');
-    myButton.setText('New Text');
-  </script>
+  <script src="test.js"></script>
+
+  <button onclick="customPromptInstance.showDialog()">Show Custom Prompt</button>
 
 </body>
 
