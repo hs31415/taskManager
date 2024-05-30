@@ -1,0 +1,39 @@
+.background {
+  background-color: #f0f0f0;
+}
+
+.taskList {
+  margin-top: 1rem;
+}
+
+.taskListItem {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 90%;
+  margin-bottom: 1rem;
+  border: 2px solid #e0e0e0;
+  padding: 1rem;
+
+  .taskDescription {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .deadline {
+    margin-top: 1rem;
+  }
+
+  span {
+    width: 100%;
+  }
+
+  .title1 {
+    display: block;
+  }
+
+  .description {
+    display: block;
+    text-indent: 1rem;
+  }
+}

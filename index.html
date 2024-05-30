@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>任务管理系统</title>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+  <div class="index-background">
+    <div class="navbar">
+      <button onclick="routeTo('#home')">首页</button>
+      <button onclick="routeTo('#addTask')">添加任务</button>
+      <button onclick="routeTo('#editTask')">编辑任务</button>
+      <button onclick="routeTo('#search')">搜索</button>
+      <button onclick="routeTo('#test')">测试界面</button>
+    </div>
+    <div id="content"></div>
+
+    <script>
+
+      const routeTo = (target) => {
+        window.location.hash = target;
+      }
+
+      function handleNavigation() {
+        const path = window.location.hash.substring(1);
+        const contentDiv = document.getElementById('content');
+
+        switch (path) {
+          case 'home':
+            loadPage('./html/home.html', contentDiv, './js/home.js');
+            break;
+          case 'addTask':
+            loadPage('./html/AddTask.html', contentDiv, './js/AddTask.js');
+            break;
+          case 'editTask':
+            loadPage('./html/editTask.html', contentDiv);
+            break;
+          case 'search':
+            loadPage('./html/search.html', contentDiv);
+            break;
+          case 'test':
+            loadPage('./html/test.html', contentDiv);
+            break;
+          default:
+            contentDiv.innerHTML = '<h2>Page Not Found</h2>';
+        }
+      }
+
+      function loadPage(page, target, script) {
+        fetch(page)
+          .then(response => response.text())
+          .then(data => {
+            target.innerHTML = data;
+            if (script) {
+              fetch(script)
+                .then(response => response.text())
+                .then(data => {
+                  console.log(data);
+                  const scriptElement = document.createElement('script');
+                  scriptElement.text = data;
+                  target.appendChild(scriptElement);
+                })
+            }
+          })
+          .catch(error => {
+            console.error('Error fetching page:', error);
+          });
+      }
+
+      window.addEventListener('hashchange', handleNavigation);
+      handleNavigation();
+    </script>
+  </div>
+</body>
+
+</html>
