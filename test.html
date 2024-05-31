@@ -4,15 +4,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Custom Prompt Example</title>
-  <link rel="stylesheet" href="test.css">
+  <title>简单日历</title>
+  <style>
+    .calendar {
+      font-family: Arial, sans-serif;
+    }
+
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .calendar-header button {
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .calendar-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .calendar-table th,
+    .calendar-table td {
+      padding: 5px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    .calendar-table th {
+      background-color: #f2f2f2;
+    }
+
+    .today {
+      background-color: #ffffcc;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
+  <button onclick="const calendar = document.getElementById('calendar');calendar.style.display='block'">显示日历</button>
+  <button onclick="const calendar = document.getElementById('calendar');calendar.style.display='none'">隐藏日历</button>
+  <br>
+  <br>
+
+  <div class="calendar" id="calendar">
+    <div class="calendar-header">
+      <button id="prevMonth">上个月</button>
+      <span id="currentMonth">2023年01月</span>
+      <button id="nextMonth">下个月</button>
+    </div>
+    <table class="calendar-table" id="calendarTable"></table>
+  </div>
 
   <script src="test.js"></script>
-
-  <button onclick="customPromptInstance.showDialog()">Show Custom Prompt</button>
 
 </body>
 
